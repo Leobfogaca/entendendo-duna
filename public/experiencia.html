@@ -9,15 +9,16 @@
   <link rel="stylesheet" href="experiencia.css">
 </head>
 <body class="experiencia-page">
-  <header>
-    <div class="container menu">
-      <a class="brand-link" href="index.html" aria-label="Entendendo Duna, página inicial"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1"/><circle cx="29" cy="15" r="4" fill="currentColor"/><path d="M7 32c7-2 11-13 18-11 6 2 6 9 16 9M8 35c11 2 17-7 31-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Entendendo <strong>Duna</strong></span></a>
-      <nav aria-label="Navegação principal">
-        <a href="index.html">Início</a>
-        <a href="index.html#sobre">Sobre</a>
+  <a class="skip-link" href="#inicio">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="brand" aria-label="Entendendo Duna, página inicial"><svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1"/><circle cx="29" cy="15" r="4" fill="currentColor"/><path d="M7 32c7-2 11-13 18-11 6 2 6 9 16 9M8 35c11 2 17-7 31-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Entendendo <strong>Duna</strong></span></a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html#sobre">Sobre o projeto</a>
+        <a href="index.html#sobre-mim">Sobre mim</a>
         <a href="experiencia.html" aria-current="page">Experiência</a>
-        <a href="dashboard.html">Painel</a>
         <a href="login.html">Entrar</a>
+        <a href="dashboard.html">Painel</a>
       </nav>
     </div>
   </header>
@@ -61,13 +62,21 @@
 
           <div id="tela-resultado" class="oculto" aria-live="polite">
             <div class="resultado-titulo">O deserto revelou seu perfil</div>
-            <h3 class="nome-resultado" id="nome-resultado"></h3>
-            <p class="subtitulo-resultado" id="subtitulo-resultado"></p>
-            <p class="descricao-resultado" id="descricao-resultado"></p>
-            <div class="conexao" id="conexao"></div>
-            <div class="botoes-resultado">
-              <button class="acao" onclick="reiniciar()">Fazer novamente ↻</button>
-              <a class="acao-secundaria" href="#sobre">Entender a experiência ↗</a>
+            <div class="resultado-conteudo">
+              <figure class="resultado-foto">
+                <img id="foto-resultado" src="assets/arrakis-inicio.jpg" alt="" loading="eager" decoding="async">
+                <figcaption>Personagem de Duna</figcaption>
+              </figure>
+              <div class="resultado-textos">
+                <h3 class="nome-resultado" id="nome-resultado"></h3>
+                <p class="subtitulo-resultado" id="subtitulo-resultado"></p>
+                <p class="descricao-resultado" id="descricao-resultado"></p>
+                <div class="conexao" id="conexao"></div>
+                <div class="botoes-resultado">
+                  <button class="acao" onclick="reiniciar()">Fazer novamente ↻</button>
+                  <a class="acao-secundaria" href="#sobre">Entender a experiência ↗</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -96,7 +105,7 @@
       </div>
     </section>
   </main>
-  <footer class="container">ENTENDENDO DUNA · Teste ilustrativo sem cadastro. Os resultados desta sessão ficam apenas no navegador. Fotografia promocional de Duna: Parte Dois (Warner Bros.), carregada por referência externa.</footer>
+  <footer class="container">ENTENDENDO DUNA · Teste ilustrativo sem cadastro. Os resultados desta sessão ficam apenas no navegador. Fotografias dos personagens: imagens de divulgação dos filmes, carregadas por referência externa; direitos dos respectivos titulares.</footer>
   <script src="experiencia.js"></script>
 </body>
 </html>
