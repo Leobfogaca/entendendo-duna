@@ -12,14 +12,8 @@
     body { margin: 0; color: var(--osso); background: var(--fundo); font-family: Arial, sans-serif }
     a { color: inherit; text-decoration: none }
     button { font: inherit; cursor: pointer }
-    .container { width: min(1160px, calc(100% - 44px)); margin: auto }
-    header { position: relative; z-index: 2; border-bottom: 1px solid #ffffff24; background: #121110e8 }
-    .menu { min-height: 78px; display: flex; justify-content: space-between; align-items: center; gap: 24px }
-    .logo { text-transform: uppercase; letter-spacing: .26em; font-size: 15px; font-weight: bold }
-    .logo span { color: var(--areia) }
-    nav { display: flex; gap: 30px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #d7c9b5 }
-    nav a:hover { color: white }
-    .hero { position: relative; min-height: 650px; display: flex; align-items: center; overflow: hidden; isolation: isolate }
+    .container { width: min(88%, 1280px); margin: auto }
+    .hero { position: relative; min-height: 650px; display: flex; align-items: center; overflow: hidden; isolation: isolate; padding-top: 82px }
     .hero::before {
       content: ""; position: absolute; inset: 0; z-index: -2;
       background: url('https://www.pcgames.de/screenshots/1280x1024/2024/03/Dune-Part-Two-Warner-Bros-PCGAMES-020-pc-games.jpg') center 46% / cover no-repeat,
@@ -44,7 +38,7 @@
     .nota { margin-top: 23px; color: #b9ad9a; font-size: 11px; letter-spacing: .08em }
     .faixa { display: flex; justify-content: space-between; gap: 30px; padding: 28px 0; border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); color: var(--neutro); font-size: 11px; text-transform: uppercase; letter-spacing: .15em }
     .faixa strong { color: var(--osso); font-weight: normal }
-    #experiencia { padding-top: 100px; padding-bottom: 104px; scroll-margin-top: 20px }
+    #experiencia { padding-top: 100px; padding-bottom: 104px; scroll-margin-top: 90px }
     .cabecalho { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 52px }
     .cabecalho h2 { font-size: clamp(35px, 5vw, 62px); margin: 18px 0 0 }
     .cabecalho p { max-width: 315px; font-size: 13px; line-height: 1.8; color: var(--neutro); margin: 0 }
@@ -87,11 +81,7 @@
       .explicacao-interno { gap: 32px }
     }
     @media (max-width: 560px) {
-      .container { width: min(100% - 32px, 1160px) }
-      .menu { min-height: 68px }
-      .logo { letter-spacing: .13em; font-size: 12px }
-      nav { gap: 15px; font-size: 10px }
-      nav a:first-child { display: none }
+      .container { width: 88% }
       .hero { min-height: 610px }
       .hero-conteudo { padding: 75px 0 }
       h1 { font-size: 62px }
@@ -106,16 +96,47 @@
     }
     @media (prefers-reduced-motion: reduce) { html {scroll-behavior: auto} * {transition: none !important} }
   
-/* Conexão visual com a navegação principal do Entendendo Duna. */
-.brand-link { display: flex; align-items: center; gap: 12px; color: var(--osso); text-decoration: none; font: 18px var(--titulo); }
-.brand-link strong { color: var(--areia); font-weight: normal; }
-.brand-link svg { color: var(--areia); width: 38px; height: 38px; flex-shrink: 0; }
-.experiencia-page nav a[aria-current="page"] { color: var(--areia); }
-.experiencia-page .container.menu { width: min(88%, 1280px); }
-@media(max-width:760px) {
-  .experiencia-page .menu { flex-wrap: wrap; padding: 14px 0; gap: 14px; }
-  .experiencia-page nav { width: 100%; gap: 12px; flex-wrap: wrap; justify-content: space-between; }
-  .experiencia-page nav a:first-child { display: inline; }
-  .brand-link { font-size: 16px; }
-  .brand-link svg { width: 30px; height: 30px; }
+
+/* Cabeçalho compartilhando a mesma estrutura visual da página inicial. */
+.experiencia-page .site-header { background: rgba(18,17,16,.95); border-bottom: 1px solid #ffffff20; position: fixed; inset: 0 0 auto; z-index: 100; }
+.experiencia-page .site-header__inner { min-height: 82px; display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+.experiencia-page .brand { display: flex; align-items: center; gap: 12px; font: 18px var(--titulo); }
+.experiencia-page .brand strong { font-weight: normal; color: var(--areia); }
+.experiencia-page .brand__mark { width: 38px; height: 38px; color: var(--areia); flex-shrink: 0; }
+.experiencia-page .main-nav { display: flex; gap: 30px; align-items: center; }
+.experiencia-page .main-nav a { font-size: 12px; color: var(--osso); padding: 12px 0; border-bottom: 1px solid transparent; }
+.experiencia-page .main-nav a:hover { color: var(--areia); border-color: var(--areia); }
+.experiencia-page .main-nav a[aria-current="page"] { color: var(--areia); }
+.experiencia-page .skip-link { position: fixed; top: -100px; left: 20px; z-index: 200; padding: 14px; background: var(--osso); color: var(--fundo); }
+.experiencia-page .skip-link:focus { top: 10px; }
+
+/* Fotografia e descrição do personagem após as sete escolhas. */
+.resultado-conteudo { display: grid; grid-template-columns: minmax(180px, 240px) minmax(0, 1fr); align-items: start; gap: 30px; margin-top: 22px; }
+.resultado-foto { margin: 0; }
+.resultado-foto img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center; background: #302820; border: 1px solid var(--borda); }
+.resultado-foto figcaption { margin-top: 12px; color: var(--neutro); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.resultado-textos .nome-resultado { margin-top: 0; font-size: clamp(35px, 4vw, 59px); }
+.resultado-textos .descricao-resultado { font-size: 14px; }
+.resultado-textos .conexao { margin: 22px 0; }
+.resultado-textos .botoes-resultado { margin-top: 24px; }
+
+@media (max-width: 1000px) {
+  .experiencia-page .main-nav { gap: 20px; }
+}
+@media (max-width: 900px) {
+  .resultado-conteudo { grid-template-columns: minmax(140px, 210px) minmax(0,1fr); gap: 22px; }
+}
+@media (max-width: 700px) {
+  .experiencia-page .site-header__inner { flex-wrap: wrap; justify-content: center; gap: 5px; padding: 12px 0; min-height: 100px; }
+  .experiencia-page .brand { font-size: 16px; }
+  .experiencia-page .brand__mark { width: 30px; height: 30px; }
+  .experiencia-page .main-nav { width: 100%; justify-content: center; gap: 22px; flex-wrap: wrap; column-gap: 12px; row-gap: 0; }
+  .experiencia-page .main-nav a { font-size: 10px; padding: 7px 0; }
+  .experiencia-page .hero { padding-top: 100px; }
+  #experiencia { scroll-margin-top: 110px; }
+}
+@media (max-width: 600px) {
+  .resultado-conteudo { grid-template-columns: 1fr; }
+  .resultado-foto { max-width: 350px; }
+  .resultado-textos .nome-resultado { font-size: 47px; }
 }
