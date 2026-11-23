@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel dos leitores | Entendendo Duna</title>
+  <link rel="stylesheet" href="identidade.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body data-view="overview">
+  <aside class="sidebar">
+    <a class="brand" href="index.html" aria-label="Entendendo Duna, voltar à home"><svg class="brand-symbol" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1"/><circle cx="29" cy="15" r="4" fill="currentColor"/><path d="M7 32c7-2 11-13 18-11 6 2 6 9 16 9M8 35c11 2 17-7 31-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span class="brand-text"><span>Entendendo <strong>Duna</strong></span></span></a>
+    <nav aria-label="Seções da dashboard">
+      <a class="sidebar-home" href="index.html">Voltar à home</a>
+      <a class="sidebar-home" href="experiencia.html">Fazer o teste</a>
+      <button type="button" data-view="overview" onclick="trocarSecao('overview')" aria-current="page">Visão geral</button>
+      <button type="button" data-view="method" onclick="trocarSecao('method')">Como interpretar</button>
+    </nav>
+    <div class="film-choice">
+      <p>Experiência ativa</p>
+      <div class="teste-ativo">Quem você seria em Arrakis?<small>7 escolhas · 4 personagens</small></div>
+    </div>
+    <div class="sidefoot">Entendendo Duna<br>Projeto individual · 2026</div>
+  </aside>
+  <main>
+    <section class="intro">
+      <div>
+        <span class="demo">Prévia · dados desta sessão</span>
+        <h1>As escolhas dos visitantes</h1>
+        <p>Veja como os resultados do teste aparecem no painel enquanto a integração com o banco ainda não foi concluída.</p>
+      </div>
+    </section>
+    <section class="kpis" aria-label="Indicadores da experiência">
+      <div class="kpi">
+        <div class="kpi-label">Testes concluídos</div>
+        <div class="value" id="total-testes">0</div>
+        <p>Apenas nesta sessão do navegador.</p>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Personagem mais frequente</div>
+        <div class="value" id="mais-frequente">Nenhum</div>
+        <p>Perfil com mais resultados nesta sessão.</p>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Perfis encontrados</div>
+        <div class="value" id="total-perfis">0 <small>/ 4</small></div>
+        <p>Quantidade de personagens diferentes obtidos.</p>
+      </div>
+    </section>
+    <section class="charts" aria-label="Resultados detalhados">
+      <article class="panel">
+        <h2>Distribuição dos personagens</h2>
+        <p class="sub">Porcentagem de resultados atribuídos a cada perfil na sessão atual.</p>
+        <div class="barrows" id="personagens"></div>
+        <div class="axis" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>
+        <div class="insight">Os perfis representam uma interpretação criativa das escolhas do visitante, não um diagnóstico.</div>
+      </article>
+      <article class="panel">
+        <h2>Último resultado</h2>
+        <p class="sub">O personagem da conclusão mais recente do teste neste navegador.</p>
+        <div class="resumo-perfil">
+          <p class="perfil-destaque" id="ultimo-perfil">Nenhum resultado ainda</p>
+          <p class="perfil-texto" id="texto-perfil">Conclua as sete perguntas e volte aqui para visualizar os dados.</p>
+        </div>
+        <a class="ir-experiencia" href="experiencia.html">Ir para a experiência <span aria-hidden="true">↗</span></a>
+      </article>
+    </section>
+    <section class="method">
+      <h2>Como interpretar os indicadores</h2>
+      <p>O site calcula o personagem com base nas sete escolhas. Cada alternativa contribui com um ponto para um dos quatro perfis. Em caso de empate, vence o perfil escolhido mais recentemente entre os empatados.</p>
+      <p>Por enquanto, o painel mostra somente conclusões realizadas nesta sessão do navegador. Não é uma amostra real de visitantes e nenhum resultado foi enviado ao banco de dados.</p>
+      <p>Para registrar resultados de usuários diferentes, a próxima etapa será conectar cadastro, autenticação, API Node.js e MySQL. Nesta versão, não há cálculo de nota, acertos ou erros.</p>
+    </section>
+    <footer><span>Entendendo Duna · Projeto acadêmico</span></footer>
+  </main>
+  <script src="dashboard.js"></script>
+</body>
+</html>
