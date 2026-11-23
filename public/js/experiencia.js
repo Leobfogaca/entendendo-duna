@@ -45,10 +45,10 @@
     ]
 
     let perfis = [
-      { nome: 'Paul Atreides', subtitulo: 'Visão, destino e responsabilidade', descricao: 'Suas escolhas apontam para quem procura enxergar além do momento presente. Você tende a valorizar possibilidades, consequências e a responsabilidade de decidir, mesmo diante de dúvidas.', conexao: 'Tema para explorar: destino ou livre-arbítrio? Nos filmes, a trajetória de Paul convida a pensar sobre o peso das expectativas e o perigo de confundir poder com certeza.' },
-      { nome: 'Chani', subtitulo: 'Autonomia, coragem e pensamento crítico', descricao: 'Suas respostas se aproximam de alguém que valoriza a liberdade, a sinceridade e o direito de questionar autoridades. Para você, a voz das pessoas importa tanto quanto qualquer grande plano.', conexao: 'Tema para explorar: quem tem o direito de decidir por um povo? Chani ajuda a discutir autonomia, pertencimento e a relação entre liderança e liberdade.' },
-      { nome: 'Lady Jessica', subtitulo: 'Estratégia, observação e influência', descricao: 'Você priorizou compreender os interesses de cada situação antes de agir. Suas decisões sugerem afinidade com a capacidade de analisar conflitos, perceber oportunidades e pensar vários passos à frente.', conexao: 'Tema para explorar: como a influência molda decisões? A trajetória de Jessica abre discussões sobre estratégia, crença e estruturas de poder.' },
-      { nome: 'Stilgar', subtitulo: 'Comunidade, tradição e confiança', descricao: 'Suas respostas indicam valorização do coletivo, da lealdade e do conhecimento adquirido com a experiência. Você prefere construir confiança antes de tomar decisões que atingem outras pessoas.', conexao: 'Tema para explorar: tradição e crença podem fortalecer ou limitar uma comunidade? Stilgar permite refletir sobre pertencimento e a força das convicções.' }
+      { nome: 'Paul Atreides', foto: 'https://images.bauerhosting.com/legacy/media/6132/095c/f234/ffdc/0a67/7d4e/dune-rev-main.jpg?ar=16%3A9&auto=format&crop=top&fit=crop&q=80&w=1200', subtitulo: 'Visão, destino e responsabilidade', descricao: 'Suas escolhas apontam para quem procura enxergar além do momento presente. Você tende a valorizar possibilidades, consequências e a responsabilidade de decidir, mesmo diante de dúvidas.', conexao: 'Tema para explorar: destino ou livre-arbítrio? Nos filmes, a trajetória de Paul convida a pensar sobre o peso das expectativas e o perigo de confundir poder com certeza.' },
+      { nome: 'Chani', foto: 'https://images.bauerhosting.com/legacy/media/6123/929b/e39a/a111/4c7b/baca/dune-3.jpg?ar=16%3A9&auto=format&crop=top&fit=crop&q=80&w=1440', subtitulo: 'Autonomia, coragem e pensamento crítico', descricao: 'Suas respostas se aproximam de alguém que valoriza a liberdade, a sinceridade e o direito de questionar autoridades. Para você, a voz das pessoas importa tanto quanto qualquer grande plano.', conexao: 'Tema para explorar: quem tem o direito de decidir por um povo? Chani ajuda a discutir autonomia, pertencimento e a relação entre liderança e liberdade.' },
+      { nome: 'Lady Jessica', foto: 'https://www.slashfilm.com/img/gallery/what-happens-to-rebecca-fergusons-lady-jessica-in-the-dune-books/l-intro-1739203231.jpg', subtitulo: 'Estratégia, observação e influência', descricao: 'Você priorizou compreender os interesses de cada situação antes de agir. Suas decisões sugerem afinidade com a capacidade de analisar conflitos, perceber oportunidades e pensar vários passos à frente.', conexao: 'Tema para explorar: como a influência molda decisões? A trajetória de Jessica abre discussões sobre estratégia, crença e estruturas de poder.' },
+      { nome: 'Stilgar', foto: 'https://aarp.widen.net/content/n8kef2rqmd/jpeg/1140-08-dune-javier-bardem.jpg?anchor=0%2C0&color=ffffffff&crop=true&h=655&q=80&u=ovnylx&w=1140', subtitulo: 'Comunidade, tradição e confiança', descricao: 'Suas respostas indicam valorização do coletivo, da lealdade e do conhecimento adquirido com a experiência. Você prefere construir confiança antes de tomar decisões que atingem outras pessoas.', conexao: 'Tema para explorar: tradição e crença podem fortalecer ou limitar uma comunidade? Stilgar permite refletir sobre pertencimento e a força das convicções.' }
     ]
 
     let indice = 0
@@ -109,6 +109,15 @@
       document.getElementById('tela-perguntas').classList.add('oculto')
       document.getElementById('tela-resultado').classList.remove('oculto')
       document.getElementById('numero-lateral').innerText = '07'
+      let foto = document.getElementById('foto-resultado')
+      foto.src = perfil.foto
+      foto.alt = 'Imagem de ' + perfil.nome + ' nos filmes de Duna'
+      // Se a fonte deixar de disponibilizar a imagem, exibe uma foto do acervo do site.
+      foto.onerror = function() {
+        foto.onerror = null
+        foto.src = 'assets/arrakis-inicio.jpg'
+        foto.alt = 'Paisagem de Arrakis, imagem alternativa'
+      }
       document.getElementById('nome-resultado').innerText = perfil.nome
       document.getElementById('subtitulo-resultado').innerText = perfil.subtitulo
       document.getElementById('descricao-resultado').innerText = perfil.descricao
