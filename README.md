@@ -13,28 +13,10 @@ Tecnologias -
 - HTML: estrutura das páginas.
 - CSS: identidade visual e responsividade.
 - JavaScript: validações e interações.
-- Node.js: API para integração entre o site e o banco de dados (planejado).
-- MySQL: armazenamento de dados (planejado).
+- Node.js: API para integração entre o site e o banco de dados.
+- MySQL: armazenamento de dados.
 - Git e GitHub: versionamento e histórico de desenvolvimento.
 
-Organização do repositório -
-entendendo-duna/
-├── public/
-│   ├── css/
-│   ├── js/
-│   ├── assets/
-│   ├── index.html
-│   ├── login.html
-│   ├── cadastro.html
-│   └── dashboard.html
-├── src/
-├── database/
-├── docs/
-│   ├── documentacao.pdf
-│   └── diario-prompts.md
-├── .gitignore
-├── README.md
-└── package.json
 
 Como executar -
 Na fase inicial, as páginas HTML podem ser abertas localmente no navegador a partir da pasta public/. Quando a API e o banco de dados estiverem integrados, esta seção será atualizada com os comandos e os requisitos necessários para executar o sistema completo.
