@@ -6,6 +6,7 @@
         <title>Entrar | Entendendo Duna</title>
         <link rel="stylesheet" href="identidade.css">
         <link rel="stylesheet" href="styles.css">
+        <script src="/navegacao.js" defer></script>
     </head>
     <body class="inner-page">
         <header class="inner-header">
@@ -13,8 +14,9 @@
                 <a class="brand" href="index.html"><svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1"/><circle cx="29" cy="15" r="4" fill="currentColor"/><path d="M7 32c7-2 11-13 18-11 6 2 6 9 16 9M8 35c11 2 17-7 31-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Entendendo <strong>Duna</strong></span></a>
                 <nav class="main-nav" aria-label="Navegação">
                     <a href="index.html">Voltar à home</a>
-                    <a href="experiencia.html">Experiência</a>
-                    <a href="dashboard.html">Painel</a>
+                    <a hidden data-acesso="leitor" href="experiencia.html">Experiência</a>
+                    <a hidden data-acesso="admin" href="dashboard.html">Painel</a>
+                <span class="conta-atual" hidden><span></span> <button type="button">Sair</button></span>
                 </nav>
             </div>
         </header>
@@ -22,21 +24,63 @@
             <div class="container inner-main__content">
                 <p class="section-label">ÁREA PESSOAL</p>
                 <h1>Entre para continuar sua jornada.</h1>
-                <p>O cadastro será necessário para realizar atividades interativas e salvar resultados. A leitura dos conteúdos continuará livre.</p>
-                <div class="login-form" role="group" aria-label="Prévia visual do formulário de login">
+                <p>Entre para fazer o teste e salvar o resultado na sua conta.</p>
+                <form class="login-form" id="form_login">
                     <div>
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="seuemail@exemplo.com" autocomplete="off">
+                        <input type="email" id="email" placeholder="seuemail@exemplo.com" autocomplete="username" required>
                     </div>
                     <div>
                         <label for="senha">Senha</label>
-                        <input type="password" id="senha" placeholder="Sua senha" autocomplete="off">
+                        <input type="password" id="senha" placeholder="Sua senha" autocomplete="current-password" required>
                     </div>
-                    <button type="button" disabled>Entrar (em desenvolvimento)</button>
-                    <small>Prévia apenas visual. Nenhuma informação é enviada ou armazenada; o login será conectado ao backend posteriormente.</small>
-                    <a class="preview-panel" href="dashboard.html">Abrir prévia do painel</a>
+                    <button type="submit">Entrar</button>
+                </form>
+                <div class="auth-actions">
+                    <p id="div_msg" role="status"></p>
+                    <a class="preview-panel" href="cadastro.html">Criar conta</a>
                 </div>
             </div>
         </main>
+        <script>
+    let formulario = document.getElementById("form_login")
+    let mensagem = document.getElementById("div_msg")
+
+    if (location.search === "?cadastro=ok") mensagem.textContent = "Conta criada! Entre com seu e-mail e senha."
+
+    formulario.addEventListener("submit", async function (evento) {
+        evento.preventDefault()
+
+        let email = document.getElementById("email").value.trim()
+        let senha = document.getElementById("senha").value
+
+        if (!email || !senha) {
+            mensagem.textContent = "Preencha o e-mail e a senha."
+            return
+        }
+
+        mensagem.textContent = "Entrando..."
+
+        try {
+            let resposta = await fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    emailServer: email,
+                    senhaServer: senha
+                })
+            })
+
+            if (!resposta.ok) {
+                mensagem.textContent = await resposta.text()
+                return
+            }
+
+            window.location.href = "experiencia.html"
+        } catch {
+            mensagem.textContent = "Não foi possível conectar ao servidor."
+        }
+    })
+</script>
     </body>
 </html>

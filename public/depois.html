@@ -6,6 +6,7 @@
         <title>Depois de assistir | Entendendo Duna</title>
         <link rel="stylesheet" href="identidade.css">
         <link rel="stylesheet" href="styles.css">
+        <script src="/navegacao.js" defer></script>
     </head>
     <body class="inner-page">
         <header class="inner-header">
@@ -13,8 +14,9 @@
                 <a class="brand" href="index.html"><svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1"/><circle cx="29" cy="15" r="4" fill="currentColor"/><path d="M7 32c7-2 11-13 18-11 6 2 6 9 16 9M8 35c11 2 17-7 31-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Entendendo <strong>Duna</strong></span></a>
                 <nav class="main-nav" aria-label="Navegação">
                     <a href="index.html">Voltar à home</a>
-                    <a href="experiencia.html">Experiência</a>
-                    <a href="dashboard.html">Painel</a>
+                    <a hidden data-acesso="leitor" href="experiencia.html">Experiência</a>
+                    <a hidden data-acesso="admin" href="dashboard.html">Painel</a>
+                <span class="conta-atual" hidden><span></span> <button type="button">Sair</button></span>
                 </nav>
             </div>
         </header>
@@ -24,19 +26,123 @@
                 <h1>Até onde você chegou?</h1>
                 <p>Para não revelar acontecimentos de um filme que você ainda não viu, escolha sua experiência antes de explorar as análises.</p>
                 <div class="internal-options">
-                    <a class="choice" href="#parte-um"><span class="choice__title">Assisti à Parte Um <svg class="choice__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.2"/></svg></span><span class="choice__hint">Sem spoilers da Parte Dois</span></a>
-                    <a class="choice" href="#duas-partes"><span class="choice__title">Assisti aos dois <svg class="choice__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.2"/></svg></span><span class="choice__hint">Análises dos dois filmes</span></a>
+                    <a class="choice" href="#indice" data-filmes="1"><span class="choice__title">Assisti à Parte Um <svg class="choice__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.2"/></svg></span><span class="choice__hint">Sem spoilers da Parte Dois</span></a>
+                    <a class="choice" href="#indice" data-filmes="2"><span class="choice__title">Assisti aos dois <svg class="choice__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.2"/></svg></span><span class="choice__hint">Análises dos dois filmes</span></a>
                 </div>
-                <section class="details"><h2>Suas escolhas em Arrakis</h2><p>Faça o teste de personalidade com sete decisões e descubra seu personagem.</p><a class="choice" href="experiencia.html"><span class="choice__title">Iniciar experiência</span><span class="choice__hint">Sem spoilers da trama</span></a></section>
-                <section class="details" id="parte-um">
-                    <h2>Apenas a Parte Um</h2>
-                    <p>Área reservada para as análises de Duna (2021). Conteúdo em planejamento.</p>
-                </section>
-                <section class="details" id="duas-partes">
-                    <h2>As duas partes</h2>
-                    <p>Área reservada para interpretações de Duna (2021) e Duna: Parte Dois (2024), com avisos claros de spoilers. Conteúdo em planejamento.</p>
-                </section>
+                <div hidden id="indice" class="indice"><h2>Índice de perguntas</h2><h3>Duna (2021)</h3><ul>
+    <li><a href="#caixa">O que aquela mulher queria descobrir quando mandou o Paul colocar a mão na caixa?</a></li>
+    <li><a href="#thufir">Por que o Thufir vira os olhos quando o duque pede uma conta?</a></li>
+    <li><a href="#armadilha">Se o Leto já desconfiava da armadilha, por que aceitou ir pra Arrakis?</a></li>
+    <li><a href="#imperador">O que o Imperador tinha contra os Atreides, afinal?</a></li>
+    <li><a href="#barao">Como o Barão sobreviveu ao veneno do Leto?</a></li>
+    <li><a href="#jamis">Se o Jamis ia ajudar o Paul nas visões, por que os dois acabam lutando?</a></li>
+</ul>
+<div id="indice-dois" hidden><h3>Duna: Parte Dois</h3><ul>
+    <li><a href="#profecia">Se as Bene Gesserit espalharam a profecia, como o Paul consegue mesmo ver o futuro?</a></li>
+    <li><a href="#agua">O que é aquele líquido azul que a Jessica bebe?</a></li>
+    <li><a href="#alia">Como a Jessica conversa com a filha se ela ainda nem nasceu?</a></li>
+    <li><a href="#sul">Por que o Paul tem tanto medo de ir pro sul? E o que faz ele mudar de ideia?</a></li>
+    <li><a href="#visao">O que o Paul passa a enxergar depois de beber a Água da Vida?</a></li>
+    <li><a href="#lagrima">Foi mesmo a lágrima da Chani que acordou o Paul?</a></li>
+    <li><a href="#avo">O que muda pro Paul quando ele descobre que o Barão é avô dele?</a></li>
+    <li><a href="#viagem">Por que o Imperador resolve ir pessoalmente pra Arrakis?</a></li>
+    <li><a href="#irulan">Se o Paul ama a Chani, por que pede a princesa Irulan em casamento?</a></li>
+    <li><a href="#guerra">Se o Paul já venceu, por que começa outra guerra no final?</a></li>
+</ul>
+</div></div><div id="parte-um" hidden><section class="details" id="caixa">
+    <h2>O que aquela mulher queria descobrir quando mandou o Paul colocar a mão na caixa?</h2>
+    <p>A caixa faz o Paul sentir a mão queimando. A agulha no pescoço dele torna a escolha bem concreta: se tirar a mão, ele morre. A Reverenda Madre quer saber se ele consegue controlar o impulso de fugir da dor. Pra mim, o detalhe que muda a cena vem quando ele tira a mão e olha pra ela. A gente passou o teste inteiro imaginando um ferimento que nunca aparece.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="thufir">
+    <h2>Por que o Thufir vira os olhos quando o duque pede uma conta?</h2>
+    <p>Ele está fazendo a conta de cabeça. Thufir é um mentat, alguém treinado pra processar uma quantidade enorme de informação. O duque faz a pergunta, os olhos viram, a resposta sai e a conversa segue. Se você achou que tinha perdido uma explicação, dá pra entender: o filme apresenta o talento dele em poucos segundos.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="armadilha">
+    <h2>Se o Leto já desconfiava da armadilha, por que aceitou ir pra Arrakis?</h2>
+    <p>A oferta vem do Imperador, em público, diante das outras Casas. Dá pra imaginar o peso de responder “prefiro ficar em casa”. Leto aceita porque acredita que ainda pode virar o jogo. Os Harkonnen passaram anos olhando pra especiaria. Ele olha pros Fremen e enxerga possíveis aliados que conhecem o planeta melhor que qualquer exército de fora.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="imperador">
+    <h2>O que o Imperador tinha contra os Atreides, afinal?</h2>
+    <p>O Leto estava ganhando prestígio entre as Grandes Casas. Do ponto de vista de quem ocupa o trono, um duque respeitado, com aliados e um exército competente, já é motivo pra perder o sono. Colocar os Atreides no caminho dos Harkonnen permite atacar a família e deixar a rivalidade entre as duas Casas explicar o que aconteceu.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="barao">
+    <h2>Como o Barão sobreviveu ao veneno do Leto?</h2>
+    <p>A pista está no teto. Quando entram na sala, encontram o Barão lá em cima, agarrado ao teto. Ele consegue se erguer com os suspensores, o mesmo recurso que a gente já viu ele usar pra flutuar. A montagem sugere que ele escapou da parte mais concentrada da nuvem. Ele ainda precisa de tratamento, então o veneno chegou a atingi-lo.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="jamis">
+    <h2>Se o Jamis ia ajudar o Paul nas visões, por que os dois acabam lutando?</h2>
+    <p>A gente vê o Jamis tratar o Paul como amigo antes de conhecer o Jamis de verdade. É fácil guardar aquilo como uma cena que ainda vai acontecer. Só que, quando os dois se encontram, as escolhas levam ao duelo. Pra mim, essa diferença ajuda a entender o peso das visões: enxergar um caminho possível não significa saber por qual deles você vai acabar andando.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+</div><div id="duas-partes" hidden><section class="details" id="profecia">
+    <h2>Se as Bene Gesserit espalharam a profecia, como o Paul consegue mesmo ver o futuro?</h2>
+    <p>Uma coisa é o Paul ter visões. Outra é o que as pessoas concluem quando veem ele acertar. As Bene Gesserit espalharam uma história que prepara os Fremen pra reconhecer certos sinais. A habilidade do Paul é real dentro do filme. A dúvida é por que isso daria a ele o direito de decidir o futuro de todo mundo.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="agua">
+    <h2>O que é aquele líquido azul que a Jessica bebe?</h2>
+    <p>É a Água da Vida, retirada de um verme jovem. Pros Fremen, beber aquilo faz parte do ritual de uma nova Reverenda Madre. O líquido é venenoso. Jessica usa o treinamento das Bene Gesserit pra transformá-lo dentro do próprio corpo e sobrevive. Ao passar pelo ritual, ela também recebe as memórias das mulheres que vieram antes dela.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="alia">
+    <h2>Como a Jessica conversa com a filha se ela ainda nem nasceu?</h2>
+    <p>Jessica já estava grávida quando bebeu a Água da Vida. O ritual também desperta a consciência de Alia, ainda na barriga. Por isso algumas cenas parecem uma conversa pela metade: a gente ouve Jessica responder, mas quem está falando com ela ainda nem nasceu. A reação da antiga Reverenda Madre ao descobrir a gravidez dá outra dimensão ao risco que Jessica correu.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="sul">
+    <h2>Por que o Paul tem tanto medo de ir pro sul? E o que faz ele mudar de ideia?</h2>
+    <p>Paul viu um futuro em que multidões guerreiam em nome dele. Ir pro sul, onde há muita gente pronta pra seguir o Lisan al-Gaib, parece um passo direto pra esse futuro. Depois que os Harkonnen atingem o sietch e os sobreviventes partem, ficar no norte já não oferece a mesma saída. Ele segue o povo e procura na Água da Vida uma maneira de enxergar o que fazer.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="visao">
+    <h2>O que o Paul passa a enxergar depois de beber a Água da Vida?</h2>
+    <p>Antes, as visões chegam em pedaços: um rosto, uma luta, um encontro. Depois ele fala dos futuros possíveis como alguém que consegue comparar caminhos e procurar uma passagem estreita entre eles. Também entende de onde a família dele veio. Isso deixa a decisão seguinte ainda mais incômoda: agora ele tem uma ideia bem melhor do preço que outras pessoas vão pagar.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="lagrima">
+    <h2>Foi mesmo a lágrima da Chani que acordou o Paul?</h2>
+    <p>Se você piscar, perde um detalhe: Chani mistura a lágrima com uma gota da própria Água da Vida antes de encostar a mistura nos lábios dele. Então a cena não isola o efeito da lágrima. O que ela mostra com clareza é como Jessica envolve Chani no ritual e como, pra quem está olhando, a recuperação do Paul parece confirmar a profecia.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="avo">
+    <h2>O que muda pro Paul quando ele descobre que o Barão é avô dele?</h2>
+    <p>Até ali, dá pra acompanhar a história como uma briga entre duas famílias e colocar o Paul inteiro de um lado. A descoberta de que Jessica é filha do Barão bagunça essa divisão. Quando Paul passa a pensar em como vencer, ele reconhece que também pode agir com a frieza que sempre associou ao inimigo. É aí que essa revelação ganha peso pra mim.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="viagem">
+    <h2>Por que o Imperador resolve ir pessoalmente pra Arrakis?</h2>
+    <p>A produção de especiaria está ameaçada e os Harkonnen perderam o controle da situação. Aí chega um desafio do próprio Paul Atreides, alguém que deveria ter desaparecido junto com a Casa dele. O Imperador desembarca com seus soldados pra retomar o controle e cobrar explicações. Só que estar em Arrakis também coloca o trono ao alcance do Paul.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="irulan">
+    <h2>Se o Paul ama a Chani, por que pede a princesa Irulan em casamento?</h2>
+    <p>Irulan é filha do Imperador. Casar com ela liga o nome do Paul à família imperial e fortalece a reivindicação dele ao trono. O que pega pra mim é que a Chani ouve a proposta junto com todo mundo. Em poucos segundos, a fala que resolve um problema político pra ele muda o que ela achava que os dois estavam construindo.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="guerra">
+    <h2>Se o Paul já venceu, por que começa outra guerra no final?</h2>
+    <p>Paul derrotou Feyd e conseguiu a rendição do Imperador. Só que as Grandes Casas que esperam acima de Arrakis recusam a ascensão dele. Quando Paul dá a ordem aos Fremen, a disputa sai daquele salão e alcança outros mundos. Lembra do futuro que ele tinha medo de ver acontecer? O fim do filme mostra justamente o momento em que ele autoriza o primeiro passo.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+</div>
             </div>
         </main>
+        <script>
+            const primeira = document.getElementById("parte-um")
+            const segunda = document.getElementById("duas-partes")
+            for (const escolha of document.querySelectorAll("[data-filmes]")) {
+                escolha.addEventListener("click", () => {
+                    document.getElementById("indice").hidden = false
+                    document.getElementById("indice-dois").hidden = escolha.dataset.filmes !== "2"
+                    primeira.hidden = false
+                    segunda.hidden = escolha.dataset.filmes !== "2"
+                })
+            }
+        </script>
     </body>
 </html>

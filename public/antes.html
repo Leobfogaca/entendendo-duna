@@ -6,6 +6,7 @@
         <title>Antes de assistir | Entendendo Duna</title>
         <link rel="stylesheet" href="identidade.css">
         <link rel="stylesheet" href="styles.css">
+        <script src="/navegacao.js" defer></script>
     </head>
     <body class="inner-page">
         <header class="inner-header">
@@ -13,8 +14,9 @@
                 <a class="brand" href="index.html"><svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1"/><circle cx="29" cy="15" r="4" fill="currentColor"/><path d="M7 32c7-2 11-13 18-11 6 2 6 9 16 9M8 35c11 2 17-7 31-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Entendendo <strong>Duna</strong></span></a>
                 <nav class="main-nav" aria-label="Navegação">
                     <a href="index.html">Voltar à home</a>
-                    <a href="experiencia.html">Experiência</a>
-                    <a href="dashboard.html">Painel</a>
+                    <a hidden data-acesso="leitor" href="experiencia.html">Experiência</a>
+                    <a hidden data-acesso="admin" href="dashboard.html">Painel</a>
+                <span class="conta-atual" hidden><span></span> <button type="button">Sair</button></span>
                 </nav>
             </div>
         </header>
@@ -22,11 +24,33 @@
             <div class="container inner-main__content">
                 <p class="section-label">SEM SPOILERS</p>
                 <h1>Antes de entrar em Arrakis.</h1>
-                <p>Esta é a trilha para quem ainda não assistiu. Ela apresentará o mundo dos filmes, as Grandes Casas e a importância da especiaria sem revelar acontecimentos importantes.</p>
-                <p class="notice">Esta página é apenas uma prévia do fluxo. Os textos e as atividades serão desenvolvidos nas próximas etapas do projeto.</p>
-                <p>Quer descobrir qual personagem combina com suas escolhas? A experiência funciona sem revelar a história dos filmes.</p>
-                <a class="choice" href="experiencia.html"><span class="choice__title">Quem você seria em Arrakis?</span><span class="choice__hint">Sete perguntas sem spoilers</span></a>
-                <a class="choice choice--light" href="index.html"><span class="choice__title">Voltar ao início <svg class="choice__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.2"/></svg></span></a>
+                <nav class="indice" id="indice" aria-label="Índice de perguntas"><h2>Por onde começar?</h2><ul>
+    <li><a href="#especiaria">Por que todo mundo quer Arrakis?</a></li>
+    <li><a href="#escudos">Por que eles usam facas se já têm naves e escudos?</a></li>
+    <li><a href="#passos">Por que os Fremen andam daquele jeito na areia?</a></li>
+    <li><a href="#olhos">Por que os olhos dos Fremen são tão azuis?</a></li>
+</ul>
+</nav><section class="details" id="especiaria">
+    <h2>Por que todo mundo quer Arrakis?</h2>
+    <p>Imagina depender de uma coisa que só existe em um lugar do universo inteiro. Em Duna, essa coisa é a especiaria, e esse lugar é Arrakis. Até quem mora num planeta cheio de água e nunca pisou no deserto depende dela pra viajar pelo espaço. Aí dá pra entender por que, quando o Imperador entrega Arrakis pro pai do Paul, ninguém naquela sala parece tão tranquilo com o presente.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="escudos">
+    <h2>Por que eles usam facas se já têm naves e escudos?</h2>
+    <p>Repara no treino do Paul com o Gurney. O escudo segura o golpe rápido, mas deixa passar a lâmina quando ela entra devagar. Dá até pra entender o problema do Paul naquela cena: ele tem que reagir rápido pra se defender e ter calma justamente na hora de acertar o golpe.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="passos">
+    <h2>Por que os Fremen andam daquele jeito na areia?</h2>
+    <p>Os vermes sentem as vibrações na areia. Se você caminhar no ritmo certinho de um pé depois do outro, fica fácil perceber que tem alguém ali. Os Fremen quebram o ritmo dos passos pra se misturar aos sons do deserto. Quando você sabe disso, dá vontade de prestar atenção até em como eles pisam.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<section class="details" id="olhos">
+    <h2>Por que os olhos dos Fremen são tão azuis?</h2>
+    <p>É o efeito de passar a vida em contato com a especiaria. Repara que até a parte que normalmente seria branca fica azul. O filme consegue te contar uma coisa sobre a relação daquela pessoa com Arrakis antes mesmo de ela abrir a boca.</p>
+    <a href="#indice">Voltar ao índice ↑</a>
+</section>
+<a class="choice choice--light" href="index.html"><span class="choice__title">Voltar ao início <svg class="choice__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.2"/></svg></span></a>
             </div>
         </main>
     </body>

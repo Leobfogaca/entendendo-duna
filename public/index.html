@@ -9,6 +9,7 @@
         <link rel="preload" href="assets/duna-profecia.jpg" as="image">
         <link rel="stylesheet" href="identidade.css">
         <link rel="stylesheet" href="styles.css">
+        <script src="/navegacao.js" defer></script>
     </head>
     <body class="home-page">
         <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -18,9 +19,10 @@
                 <nav class="main-nav" aria-label="Navegação principal">
                     <a href="#sobre">Sobre o projeto</a>
                     <a href="#sobre-mim">Sobre mim</a>
-                    <a href="experiencia.html">Experiência</a>
+                    <a hidden data-acesso="leitor" href="experiencia.html">Experiência</a>
                     <a href="login.html">Entrar</a>
-                    <a href="dashboard.html">Painel</a>
+                    <a hidden data-acesso="admin" href="dashboard.html">Painel</a>
+                <span class="conta-atual" hidden><span></span> <button type="button">Sair</button></span>
                 </nav>
             </div>
         </header>
@@ -33,7 +35,7 @@
             <div class="container hero__layout">
                 <div class="hero__content">
                     <h1 class="hero__title" id="titulo-principal"><span class="hero__question">O que carrega mais verdade:</span> <span class="hero__answer">História <span class="hero__second-line">ou Profecia?</span></span></h1>
-                    <p class="hero__description">Dois filmes que mudaram minha vida. Descubra esse universo através dos meus olhos. Conheça Duna sem spoilers ou explore as minhas ideias do filme.</p>
+                    <p class="hero__description">Dois filmes. Diferentes maneiras de descobrir o mesmo universo. Conheça Duna sem spoilers ou explore as ideias que permanecem depois dos créditos.</p>
                     <div class="hero__choices" aria-label="Escolha como explorar Duna">
                         <a class="choice choice--light" href="antes.html"><span class="choice__title">Ainda não assisti <svg class="choice__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.2"/></svg></span><span class="choice__hint">Começar sem spoilers</span></a>
                         <a class="choice choice--outline" href="depois.html"><span class="choice__title">Já assisti <svg class="choice__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 16 16 4M4 4h12v12" stroke="currentColor" stroke-width="1.2"/></svg></span><span class="choice__hint">Explorar interpretações</span></a>
@@ -50,9 +52,9 @@
                 <div class="container editorial__grid">
                     <div class="editorial__copy">
                         <p class="section-label">SOBRE O PROJETO</p>
-                        <h2 id="titulo-sobre">Além da <em>ficção.</em></h2>
-                        <p class="editorial__lead">Duna não é apenas uma jornada por um planeta distante. É também uma história sobre poder, crenças e as consequências de nossas escolhas.</p>
-                        <p>O Entendendo Duna nasceu para acompanhar dois tipos de espectadores: quem quer entrar nesse universo pela primeira vez e quem terminou os filmes com perguntas que ainda merecem ser exploradas.</p>
+                        <h2 id="titulo-sobre">Além do que o filme <em>representa.</em></h2>
+                        <p class="editorial__lead">Duna não é apenas uma jornada por um planeta distante. É também uma história sobre poder, crenças e as consequências de nossas escolhas. E um dos filmes mais importantes da minha vida</p>
+                        <p>O Entendendo Duna nasceu para acompanhar dois tipos de espectadores: quem quer começar nesse universo pela primeira vez e quem terminou os filmes com perguntas que ainda merecem ser exploradas.</p>
                     </div>
                     <figure class="editorial__figure">
                         <img src="assets/duna-parte-dois.jpg" alt="Duas figuras diante de um grande sol alaranjado em uma cena de Duna: Parte Dois" width="736" height="414" loading="lazy" decoding="async">
@@ -64,16 +66,16 @@
                 <div class="container">
                     <p class="section-label">TEMAS DO UNIVERSO</p>
                     <div class="themes__heading">
-                        <h2 id="titulo-temas">Muito além das <em>areias.</em></h2>
-                        <p>Alguns dos assuntos que dão profundidade à experiência — apresentados sem revelar momentos importantes dos filmes.</p>
+                        <h2 id="titulo-temas">Muito além do <em>que se vê.</em></h2>
+                        <p>Alguns dos assuntos que dão profundidade à experiência. Apresentados sem revelar momentos importantes dos filmes.</p>
                     </div>
                     <ul class="theme-list">
                         <li>
                             <h3>Arrakis</h3>
-                            <p>O planeta desértico e sua importância para todo o universo.</p>
+                            <p>O planeta desértico e sua importância para TODO o universo.</p>
                         </li>
                         <li>
-                            <h3>Grandes Casas</h3>
+                            <h3>As Grandes Casas</h3>
                             <p>Famílias, alianças e interesses em disputa.</p>
                         </li>
                         <li>
@@ -92,7 +94,7 @@
                 </div>
             </section>
 
-            <section class="experience-feature section-space" id="experiencia" aria-labelledby="titulo-experiencia">
+            <section hidden data-acesso="leitor" class="experience-feature section-space" id="experiencia" aria-labelledby="titulo-experiencia">
                 <div class="container experience-feature__grid">
                     <div>
                         <p class="section-label">EXPERIÊNCIA INTERATIVA · SEM SPOILERS</p>
@@ -100,24 +102,22 @@
                     </div>
                     <div class="experience-feature__copy">
                         <p>O que suas decisões dizem sobre você? Responda a sete perguntas e descubra qual personagem se aproxima mais das suas escolhas.</p>
-                        <a class="experience-feature__link" href="experiencia.html">Descobrir meu personagem <span aria-hidden="true">↗</span></a>
+                        <a hidden data-acesso="leitor" class="experience-feature__link" href="experiencia.html">Descobrir meu personagem <span aria-hidden="true">↗</span></a>
                         <p class="experience-feature__meta">07 perguntas · 04 personagens · nenhuma resposta errada</p>
                     </div>
                 </div>
             </section>
             <section class="about-author section-space" id="sobre-mim" aria-labelledby="titulo-autor">
                 <div class="container author__grid">
-                    <div class="author__heading">
+                    <div class="author__heading author__copy">
                         <p class="section-label">Sobre mim</p>
                         <h2 id="titulo-autor">Quem está por trás<br>do Entendendo Duna.</h2>
                         <p class="author__name">Leonardo Fogaça</p>
-                        <p class="author__role">Estudante de Ciência da Computação</p>
-                    </div>
-                    <div class="author__copy">
-                        <p class="author__lead">Meu interesse por Duna vai além da ação: passa pelas reflexões políticas e filosóficas e pela maneira como o cinema conta essa história.</p>
+                        <p class="author__lead">Meu interesse por Duna vai muito além da ação: passa pelas reflexões que Duna trás, tanto políticas e filosóficas e pela maneira como o cinema conta essa história.</p>
                         <p>Sou Leonardo Fogaça e desenvolvo o Entendendo Duna como meu projeto individual de Ciência da Computação. Aqui, reúno meu interesse pelos filmes de Denis Villeneuve e o que estou aprendendo sobre desenvolvimento de sites.</p>
                         <p>Quero criar um espaço que desperte a curiosidade de quem ainda não assistiu e ajude quem já viu a explorar os temas, os conflitos e as escolhas cinematográficas dos dois filmes.</p>
                     </div>
+                    <div><img class="author__portrait" src="assets/leo-arrakis.png" alt="Montagem de Leo com um traje fremen em Arrakis" width="1127" height="1396" loading="lazy"></div>
                 </div>
             </section>
         </main>

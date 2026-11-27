@@ -1,0 +1,26 @@
+.painel-leitores main { overflow-y: auto; }
+.painel-leitores .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.painel-leitores .kpi { min-width: 0; }
+.painel-leitores .charts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; flex: none; }
+.painel-leitores .charts .panel { height: auto; min-height: 0; min-width: 0; }
+.painel-leitores .charts .barrows { display: grid; gap: 16px; margin-top: 12px; }
+.grafico-linha { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 5px 12px; align-items: center; }
+.grafico-linha meter { grid-column: 1 / -1; grid-row: 2; width: 100%; }
+.grafico-linha meter::-webkit-meter-optimum-value { background: #d29c5f; }
+.grafico-linha meter::-moz-meter-bar { background: #d29c5f; }
+.grafico-linha span, .painel-leitores .kpi-label { overflow-wrap: anywhere; }
+#status-indicadores:empty { display: none; }
+
+@media (max-width: 1000px) {
+    .painel-leitores .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .painel-leitores .charts { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 540px) {
+    .painel-leitores .kpis { grid-template-columns: minmax(0, 1fr); }
+}
+.painel-leitores .panel .sub, .painel-leitores .kpi p, .grafico-status { font-size: 13px; line-height: 1.5; }
+.grafico-status:empty { display: none; }
+.grafico-linha { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grafico-linha strong { text-align: right; overflow-wrap: anywhere; }
+
+.painel-leitores .grafico-mudancas { grid-column: 1 / -1; }
