@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel dos leitores | Entendendo Duna</title>
+  <link rel="stylesheet" href="identidade.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="dashboard-periodo.css">
+    <script src="/navegacao.js" defer></script>
+    </head>
+<body class="painel-leitores" data-view="overview">
+  <aside class="sidebar">
+    <a class="brand" href="index.html" aria-label="Entendendo Duna, voltar à home"><svg class="brand-symbol" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1"/><circle cx="29" cy="15" r="4" fill="currentColor"/><path d="M7 32c7-2 11-13 18-11 6 2 6 9 16 9M8 35c11 2 17-7 31-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span class="brand-text"><span>Entendendo <strong>Duna</strong></span></span></a>
+    <nav aria-label="Seções da dashboard">
+      <a class="sidebar-home" href="index.html">Voltar à home</a>
+      <a hidden data-acesso="leitor" class="sidebar-home" href="experiencia.html">Fazer o teste</a>
+    <span class="conta-atual" hidden><span></span> <button type="button">Sair</button></span>
+                </nav>
+    <div class="film-choice">
+      <p>Experiência ativa</p>
+      <div class="teste-ativo">Quem você seria em Arrakis?<small>7 escolhas · 4 personagens</small></div>
+    </div>
+    <div class="sidefoot">Entendendo Duna<br>Projeto individual · 2026</div>
+  </aside>
+  <main>
+    <section class="intro">
+      <div>
+        <h1>Participação no teste de personalidade</h1>
+        <p>Histórico acumulado · Testes concluídos pelos leitores · Dados do MySQL</p>
+        <p id="status-indicadores" role="status">Carregando indicadores…</p>
+      </div>
+    </section>
+    <section class="kpis" aria-label="Indicadores da experiência">
+      <div class="kpi">
+        <div class="kpi-label">Testes concluídos</div>
+        <div class="value" id="total-testes">…</div>
+        <p>Total de testes concluídos pelos leitores.</p>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Participantes únicos</div>
+        <div class="value" id="total-participantes">…</div>
+        <p>Leitores que concluíram pelo menos um teste.</p>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Leitores que refizeram o teste</div>
+        <div class="value" id="total-repetiram">…</div>
+        <p>Leitores que concluíram dois ou mais testes.</p>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Taxa de repetição</div>
+        <div class="value" id="taxa-repeticao">…</div>
+        <p id="contexto-repeticao">Participantes com duas ou mais conclusões.</p>
+      </div>
+    </section>
+    <section class="charts" aria-label="Resultados detalhados">
+      <article class="panel">
+        <h2>Distribuição dos personagens</h2>
+        <p class="sub">Soma os participantes únicos. Cada leitor aparece pelo último personagem que tirou.</p>
+        <p id="status-personagens" class="grafico-status" role="status"></p>
+        <div class="barrows" id="personagens"></div>
+      </article>
+      <article class="panel">
+        <h2>Quantas vezes cada leitor fez o teste?</h2>
+        <p class="sub">As duas últimas faixas somam os leitores que refizeram o teste.</p>
+        <p id="status-frequencias" class="grafico-status" role="status"></p>
+        <div class="barrows" id="frequencias"></div>
+      </article>
+      <article class="panel grafico-mudancas">
+        <h2>O personagem mudou ao refazer o teste?</h2>
+        <p class="sub">Compara o primeiro e o último resultado de quem concluiu pelo menos duas vezes.</p>
+        <p id="status-mudancas" class="grafico-status" role="status"></p>
+        <div class="barrows" id="mudancas"></div>
+      </article>
+    </section>
+    <footer><span>Entendendo Duna · Projeto acadêmico</span></footer>
+  </main>
+  <script src="dashboard.js"></script>
+</body>
+</html>

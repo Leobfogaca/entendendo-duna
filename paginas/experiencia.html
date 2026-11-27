@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sete decisões e quatro personagens. Descubra quem você seria no universo dos filmes de Duna.">
+  <title>Quem você seria em Arrakis? | Entendendo Duna</title>
+  <link rel="stylesheet" href="identidade.css">
+  <link rel="stylesheet" href="experiencia.css">
+    <script src="/navegacao.js" defer></script>
+    </head>
+<body class="experiencia-page">
+  <a class="skip-link" href="#inicio">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="brand" aria-label="Entendendo Duna, página inicial"><svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="1"/><circle cx="29" cy="15" r="4" fill="currentColor"/><path d="M7 32c7-2 11-13 18-11 6 2 6 9 16 9M8 35c11 2 17-7 31-1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Entendendo <strong>Duna</strong></span></a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html#sobre">Sobre o projeto</a>
+        <a href="index.html#sobre-mim">Sobre mim</a>
+        <a hidden data-acesso="leitor" href="experiencia.html" aria-current="page">Experiência</a>
+        <a href="login.html">Entrar</a>
+        <a hidden data-acesso="admin" href="dashboard.html">Painel</a>
+      <span class="conta-atual" hidden><span></span> <button type="button">Sair</button></span>
+                </nav>
+    </div>
+  </header>
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-conteudo">
+        <div class="sobrelinha">Uma experiência interativa · Sem spoilers da trama</div>
+        <h1>Quem você seria<br>em <em>Arrakis?</em></h1>
+        <p>No universo de Duna, o poder é uma escolha — e toda escolha tem consequências. Descubra qual personagem mais se aproxima das suas decisões.</p>
+        <a class="acao" href="#experiencia">Iniciar experiência <span aria-hidden="true">→</span></a>
+        <div class="nota">07 escolhas &nbsp;·&nbsp; 04 perfis &nbsp;·&nbsp; nenhuma resposta errada</div>
+      </div>
+    </section>
+
+    <section class="container" aria-label="Sobre o teste">
+      <div class="faixa">
+        <div>01 / <strong>Escolha o que faria</strong></div>
+        <div>02 / <strong>Descubra seu personagem</strong></div>
+        <div>03 / <strong>Entenda os temas de Duna</strong></div>
+      </div>
+    </section>
+
+    <section class="container" id="experiencia">
+      <div class="cabecalho">
+        <div>
+          <div class="sobrelinha">Arquivos de Arrakis / Experiência 01</div>
+          <h2>O peso das escolhas.</h2>
+        </div>
+        <p>Não existe resposta certa. Pense no que realmente guiaria suas atitudes diante de cada situação.</p>
+      </div>
+
+      <div class="painel">
+        <div class="painel-principal">
+          <div id="tela-perguntas">
+            <div class="progresso-topo"><span>Suas decisões</span><span id="contador">01 / 07</span></div>
+            <div class="trilho"><div class="barra" id="barra"></div></div>
+            <h3 class="pergunta" id="pergunta"></h3>
+            <div class="opcoes" id="opcoes"></div>
+            <button class="anterior" id="voltar" onclick="voltar()">← Voltar à pergunta anterior</button>
+          </div>
+
+          <div id="tela-resultado" class="oculto" aria-live="polite">
+            <div class="resultado-titulo">O deserto revelou seu perfil</div>
+            <div class="resultado-conteudo">
+              <figure class="resultado-foto">
+                <img id="foto-resultado" src="assets/arrakis-inicio.jpg" alt="" loading="eager" decoding="async">
+                <figcaption>Personagem de Duna</figcaption>
+              </figure>
+              <div class="resultado-textos">
+                <h3 class="nome-resultado" id="nome-resultado"></h3>
+                <p class="subtitulo-resultado" id="subtitulo-resultado"></p>
+                <p class="descricao-resultado" id="descricao-resultado"></p>
+                <div class="conexao" id="conexao"></div>
+                <p id="registro" role="status"></p>
+                <button id="repetir-envio" hidden onclick="salvarResultado()">Tentar salvar novamente</button>
+                <p>Por onde você quer continuar?</p>
+                <div class="botoes-resultado">
+                  <a class="acao" href="antes.html">Ainda não assisti</a>
+                  <a class="acao" href="depois.html">Já assisti</a>
+                </div>
+                <div class="botoes-resultado">
+                  <button id="refazer" class="acao" onclick="reiniciar()">Fazer novamente ↻</button>
+                  <a class="acao-secundaria" href="#sobre">Entender a experiência ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="lateral" aria-label="Informações da experiência">
+          <div><div class="lateral-titulo">Registro 01</div><div class="lateral-numero" id="numero-lateral">01</div></div>
+          <div>
+            <div class="lateral-titulo">O destino é escrito ou escolhido?</div>
+            <p>O universo de Duna é atravessado por dilemas sobre poder, liberdade, pertencimento e destino.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="explicacao" id="sobre">
+      <div class="container explicacao-interno">
+        <div>
+          <div class="sobrelinha">Mais que um resultado</div>
+          <h2>Descobrir é o começo. Compreender vem depois.</h2>
+        </div>
+        <div>
+          <p>Esta experiência faz parte do projeto Entendendo Duna. As perguntas transformam temas presentes nos filmes — liderança, autonomia, estratégia e comunidade — em decisões pessoais e aproximam o visitante dos personagens.</p>
+          <p>Os perfis são associações narrativas feitas para entretenimento e reflexão, não avaliações psicológicas. O resultado não mede quanto você sabe sobre os filmes.</p>
+          <p>Ao concluir o teste, seu personagem fica registrado na sua conta.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="container">ENTENDENDO DUNA · Teste de personalidade. Fotografias dos personagens: imagens de divulgação dos filmes, carregadas por referência externa; direitos dos respectivos titulares.</footer>
+  <script src="experiencia.js"></script>
+</body>
+</html>
